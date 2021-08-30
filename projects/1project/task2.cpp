@@ -22,7 +22,7 @@ for (int i = 0; i< n; i++){
     x[i] = (double) i/n;  //fills x[] with x-values between 0 and 1
 
     //writes x and u values in file with ", " as sepperator
-    myfile<< setprecision(3) << x[i] << ", " << setprecision(4) << 1.0-(1.0-exp(-10.0))*x[i] - exp(-10.0*x[i])<< endl;
+    myfile<< fixed<< setprecision(3) << x[i] << ", " << setprecision(4) << 1.0-(1.0-exp(-10.0))*x[i] - exp(-10.0*x[i])<< endl;
 }
 
 myfile << 1 << ", " << 0.0 << endl; //special condition for boundary
