@@ -7,7 +7,11 @@
 
 using namespace std;
 
-int function1(){
+
+
+
+int main(){
+//task 2
 
 double x[1000]; //defines double precision array for x-values
 
@@ -29,14 +33,8 @@ myfile << 1 << ", " << 0.0 << endl; //special condition for boundary
 
 myfile.close();
 
+
 return 0;
-}
-
-int main() {
-function1(); //calls function1 to complete task 2
-
-
-  return 0;
 }
 
 
