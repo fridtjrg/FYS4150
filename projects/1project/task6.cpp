@@ -4,28 +4,58 @@
 #include <string> //includes sting library
 #include <math.h>
 #include <iomanip>
+ 
 
 using namespace std;
 
 int main(){
 
-int n = 4;
+//------------Task 7------------
+
+int n= 10;
+
+double x[n], u[n];
+
+//reads values from task2
+ifstream myreadfile("xanduvalues.txt");
+string sep = ", ", myText; //defines seperator from task 2
+
+//inserts values for u and x
+int i = 0;
+while (getline (myreadfile, myText)) {
+  x[i] = stod(myText.substr(0, myText.find(sep))); 
+  u[i] = stod(myText.substr(myText.find(sep) + sep.length() , -1)); 
+  i++;
+
+}
+
+myreadfile.close();
 
 
+
+//defines and fills out g
+double g[n];
+
+float h = 1./n; //steplength
+
+for (int i=1; i<=n-1; i++){ 
+
+  g[i] = (u[i-1]-2*u[i]+u[i+1])/pow(h,  2.);
+  }
+
+
+n = n-2; //because g will have to values less than u beacuse of boundaries.
 
 double a[n-1];  //subdiagonal
 double b[n];    //main diagonal
 double c[n-1];  //superdiagonal
-double g[n];
 
 //filling A matrix
 fill_n(a,n-1,-1);
 fill_n(b,n,2);
 fill_n(c,n-1,-1);
 
-
-fill_n(g,n,2); //Fill with what?
-
+//---------------task 6 algorithm----------------------
 
   double v[n];		   //Vector v, same size as b
 
