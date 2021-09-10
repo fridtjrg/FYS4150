@@ -44,7 +44,8 @@ for (int i=1; i<=n-1; i++){
   }
 
 
-n = n-2; //because g will have to values less than u beacuse of boundaries.
+
+
 
 double a[n-1];  //subdiagonal
 double b[n];    //main diagonal
@@ -84,13 +85,18 @@ for (int i=1; i<=n-1; i++){ // from 1 to not go out of range, to n-1 beacuse of 
 v[n-1] = g_tilda[n-1]/b_tilda[n-1]; //special case for last elemtns in v(1 flop)
 
 //back subst. (total 3*(n-2) flops)
-for (int i=n-2; i>=0; i--){ // from n-2 to not go out of range, to 0
+for (int i=n-2; i>=1; i--){ // from n-2 to not go out of range
 
       v[i] = (g_tilda[i] - c[i]*v[i+1])/b_tilda[i];		//3 flops
   }
 
 
 
+/*
+For some reason, dividing v by -1100 gives me 
+a graph that looks like u(x), i suspect i have some kind
+of typo in my code that i can't spot
+*/
 
 
 ofstream mywritefile;
@@ -99,8 +105,7 @@ ofstream mywritefile;
 mywritefile.open("xandv_values.txt");
 
 for (int i = 0; i<= n; i++){
-    //skips first x-value because we xant calculate v(0) due to boundary
-    mywritefile<< fixed<< setprecision(3) << x[i+1] << ", " << setprecision(4) << v[i]<< endl;
+    mywritefile<< fixed<< setprecision(3) << x[i] << ", " << setprecision(4) << v[i]<< endl;
 }
 
 
