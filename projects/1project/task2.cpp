@@ -13,7 +13,7 @@ using namespace std;
 int main(){
 //task 2
 
-double x[10]; //defines double precision array for x-values
+double x[100]; //defines double precision array for x-values
 
 ofstream myfile;
 
