@@ -64,7 +64,7 @@ float h = 1./n; //steplength
 for (int i=1; i<=n-1; i++){ 
 
   //orginally: g[i] = (u[i-1]-(2*u[i])+u[i+1])/(pow(h,2))
-  g[i] = -(u[i-1]-(2*u[i])+u[i+1]); 
+  g[i] = -(u[i-1]-(2*u[i])+u[i+1]); //NBNBNBNB
 
   }
 
@@ -122,11 +122,6 @@ double duration_seconds = std::chrono::duration<double>(t2 - t1).count();
 
 cout << endl << "the calculation took " << duration_seconds <<"s"<<endl;
 
-/*
-For some reason, dividing v by -1100 gives me 
-a graph that looks like u(x), i suspect i have some kind
-of typo in my code that i can't spot
-*/
 
 
 ofstream mywritefile;

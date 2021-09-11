@@ -100,14 +100,12 @@ plt.ylabel("$log_{10}(\Delta)$")
 plt.title("Plot of the absolute error")
 plt.legend()
 plt.grid()     
-plt.savefig('abs-error(n='+str(n)+').pdf')
+plt.savefig('abs-error.pdf')
 plt.show()    
 
 
 
 #-------------Task 8: plots the realtive error--------------
-
-
 
 
 
@@ -154,6 +152,6 @@ plt.ylabel("$log_{10}(\epsilon$)")
 plt.title("Plot of the realtive error")
 plt.legend()
 plt.grid()     
-plt.savefig('rel-error(n='+str(n)+').pdf')
+plt.savefig('rel-error.pdf')
 #plt.show()    
 
