@@ -16,6 +16,7 @@ You will get prompted to enter an n value to calculate u and v. Enter "0" to gen
 
 $ python new_plot.py
 
+Running the python plot will return the largest relative error, or rather "max(log(\epsilon))" for each n. 
 
 
 -----------------Comments:----------------------
