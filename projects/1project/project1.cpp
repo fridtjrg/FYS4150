@@ -14,13 +14,25 @@ int create_u(int n);
 
 
 int main(){
-int n;
+int n; int p;
 
 cout<< "n=";
 cin >> n;
 
-create_u(n);
-calculate_v(n);
+if(n==0){
+    for(p=1; p<=5; p++){
+
+    create_u(pow(10,p));    //task 2
+    calculate_v(pow(10,p)); //task 6 and 7
+
+    cout << "n="<< pow(10,p) <<" created";
+}
+}
+else{
+    create_u(n);
+    calculate_v(n);
+}
+
 
 }
 
@@ -59,7 +71,7 @@ myreadfile.close();
 //defines and fills out g
 double g[n];
 
-float h = 1./n; //steplength
+//float h = 1./n; //steplength
 
 for (int i=1; i<=n-1; i++){ 
 
@@ -81,7 +93,7 @@ fill_n(a,n-1,-1);
 fill_n(b,n,2);
 fill_n(c,n-1,-1);
 
-//---------------task 6 algorithm----------------------
+//---------------task 6 algorithm(and 7)----------------------
 
 double v[n];           //Vector v, same size as b
 

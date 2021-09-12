@@ -50,7 +50,8 @@ plt.title("Comparison between u and v values")
 plt.legend()
 plt.grid()     
 plt.savefig('u_and_v_plotls.pdf')
-plt.show()    
+#plt.show()    
+
 
 x =[]
 u =[]
@@ -101,7 +102,7 @@ plt.title("Plot of the absolute error")
 plt.legend()
 plt.grid()     
 plt.savefig('abs-error.pdf')
-plt.show()    
+#plt.show()    
 
 
 
@@ -135,10 +136,11 @@ for i in range(1,5):
 
 
 
-    log_abs_error = np.log10(abs((u-v)/u))
+    log_rel_error = np.log10(abs((u-v)/u))
 
-    #plots function u(x) 
-    plt.plot(x,log_abs_error, label ="$log_{10}(\epsilon)$(n="+str(n)+")")
+    print("The biggest relative error for n="+ str(n)+", is "+str(np.max(log_rel_error)))
+
+    plt.plot(x,log_rel_error, label ="$log_{10}(\epsilon)$(n="+str(n)+")")
 
     x=[]
     v=[]
